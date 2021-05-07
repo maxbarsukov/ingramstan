@@ -1,24 +1,41 @@
-# README
+# Ingramstan
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Allow users to create an account, upload photos, like and comment on photos, follower users and be followed and more.
 
-Things you may want to cover:
+## Functionality included
 
-* Ruby version
+- Sign up / sign in / forgot password
+- Sign in with Facebook
+- Upload images
+- Feed of latest posts
+- Like and comment on posts
+- Follow users and get followed by them
+- User profile / edit account details
 
-* System dependencies
+## About the code
 
-* Configuration
+- Built with Ruby on Rails 6
+- Using Boostrap for styles
+- Carrierwave is used to store user images
+- Devise as authentication solution
 
-* Database creation
+## Setup
 
-* Database initialization
+Clone this repository:
 
-* How to run the test suite
+`git clone git@github.com:maxbarsukov/ingramstan.git`
 
-* Services (job queues, cache servers, search engines, etc.)
+Setup database and seeds:
 
-* Deployment instructions
+`bundle exec rails db:create db:migrate db:seed`
 
-* ...
+Setup your test database:
+
+`bundle exec rails db:test:prepare`
+
+## Run
+
+Dev:
+`rails server`
+
+
