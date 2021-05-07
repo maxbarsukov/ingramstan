@@ -1,0 +1,19 @@
+<% if notification_type.present? %>
+  <% if notification_type == alert %>
+    <div class="alert alert-danger" role="alert">
+      <button type="button" class="close" aria-label="Close" onclick="this.parentElement.style.display='none'" >
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      <%= notification_type %>
+    </div>
+  <% elsif notification_type == notice  %>
+    <div class="alert alert-info" role="alert">
+      <button type="button" class="close" aria-label="Close" onclick="this.parentElement.style.display='none'" >
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      <%= notification_type %>
+    </div>
+  <% end %>
+<% end %>

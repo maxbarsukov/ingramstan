@@ -12,6 +12,23 @@
   </head>
 
   <body>
-    <%= yield %>
+  <%= render partial: 'layouts/header' %>
+
+  <%= render 'layouts/notification', notification_type: alert %>
+
+  <%= render 'layouts/notification', notification_type: notice %>
+
+  <section class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 pt-4">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%= render partial: 'layouts/footer' %>
   </body>
+</html>
 </html>
