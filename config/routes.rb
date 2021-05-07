@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'public#homepage'
   devise_for :users
-  root to: "public#homepage"
+
+  get '/dashboard' => 'users#index'
 end
