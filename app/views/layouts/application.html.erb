@@ -25,11 +25,12 @@
   <!-- Page content-->
   <div class="container">
     <div class="row">
-      <%= yield %>
+      <div class="col-lg-12">
+        <%= yield %>
+      </div>
     </div>
   </div>
+
   <%= render partial: 'layouts/footer' %>
   </body>
 </html>
-
-
