@@ -2,8 +2,11 @@
   <div class="row">
     <div class="col-8">
       <% @posts.each do |post| %>
-        <%= post.user.username %>
+        <div class="insta-post">
+        <div class="post-meta"><%= post.user.username %></div>
+
         <%= image_tag post.image.url, class: "img img-fluid" %>
+        </div>
       <% end %>
     </div>
   </div>
