@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def profile
-    # User profile
+    @posts = @user.posts.active
   end
 
   private

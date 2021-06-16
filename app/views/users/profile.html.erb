@@ -12,8 +12,18 @@
       <div class="profile-stats"><%= @user.total_following %> following</div>
 
       <p><%= @user.full_name %></p>
-      <p><%= @user.description %></p>
+      <%= simple_format @user.description %>
       <p><%= link_to @user.website if @user.website.present? %></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <% @posts.each do |post| %>
+        <div class="insta-post">
+          <%= image_tag post.image.url, class: "img img-fluid" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
