@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.7'
 # Upload files
 gem 'carrierwave', '~> 0.11.2'
 
+# Image resizing
+gem 'mini_magick', '~> 4.5', '>= 4.5.1'
+
 # User authentication
 gem 'devise', '~> 4.2'
 
