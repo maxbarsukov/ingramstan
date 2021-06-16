@@ -17,13 +17,13 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-12">
-      <% @posts.each do |post| %>
+  <div class="row profile-posts">
+    <% @posts.each do |post| %>
+      <div class="col-4">
         <div class="insta-post">
-          <%= image_tag post.image.url, class: "img img-fluid" %>
+        <%= image_tag post.image.url, class: "img img-fluid" %>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
