@@ -9,5 +9,14 @@
         </div>
       <% end %>
     </div>
+
+    <div class="col-4">
+      <div class="user-summary">
+        <p>
+        <strong><%= current_user.username %></strong><br />
+        <%= current_user.full_name %>
+        </p>
+      </div>
+    </div>
   </div>
 </div>
