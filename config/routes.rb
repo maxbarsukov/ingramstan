@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :posts, only: [:new, :create, :show]
 
   get '/dashboard' => 'users#index'
-  get 'profile/:username' => 'users#profile'
+  get 'profile/:username' => 'users#profile', as: :profile
 end
