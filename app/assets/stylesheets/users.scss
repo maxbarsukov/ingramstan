@@ -14,10 +14,14 @@ body {
   border-radius: 3px;
 }
 
+.img-circle {
+  border-radius: 50%;
+}
+
 .profile-pic {
   width: 200px;
   height: 200px;
-  border-radius: 50%;
+  @extend .img-circle;
 }
 
 .profile-stats {
