@@ -5,11 +5,15 @@
     </div>
 
     <div class="col-8 text-left">
-      <h1><%= @user.full_name %></h1>
+      <h1><%= @user.username %></h1>
       <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-secondary" %>
       <div class="profile-stats"><%= @user.posts.count %> posts</div>
       <div class="profile-stats"><%= @user.total_followers %> followers</div>
       <div class="profile-stats"><%= @user.total_following %> following</div>
+
+      <p><%= @user.full_name %></p>
+      <p><%= @user.description %></p>
+      <p><%= link_to @user.website if @user.website.present? %></p>
     </div>
   </div>
 </div>
