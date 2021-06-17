@@ -25,11 +25,16 @@
 
     <div class="col-4">
       <div class="user-summary">
-        <p><strong><%= current_user.username %></strong><br />
-        <%= current_user.full_name %></p>
+        <p>
+          <%= link_to (image_tag current_user.image.thumb.url, class: "img-circle"), profile_path(current_user.username) %>
+          <strong><%= current_user.username %></strong>
+        </p>
+
+        <p><%= current_user.full_name %></p>
       </div>
       <div class="follower-suggestions">
-
+        <%= link_to "View All", "#", class: "pull-right" %>
+        <p class="text-muted">Suggestions for you</p>
       </div>
     </div>
   </div>
