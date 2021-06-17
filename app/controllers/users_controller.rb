@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:profile]
 
   def index
-    # User dashboard - post feed
     @posts = Post.active
   end
 
