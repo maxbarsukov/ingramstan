@@ -10,8 +10,11 @@
 
           <%= image_tag post.image.url, class: "img img-fluid" %>
           <div class="post-details">
-            <p><%= post.total_likes %> likes</p>
-            <%= simple_format post.description %>
+            <p><strong><%= post.total_likes %> likes</strong></p>
+            <% if post.description.present? %>
+              <p><strong><%= link_to post.user.username, profile_path(post.user.username), class: "text-dark" %></strong></p>
+              <%= simple_format post.description %>
+            <% end %>
           </div>
         </div>
       <% end %>
