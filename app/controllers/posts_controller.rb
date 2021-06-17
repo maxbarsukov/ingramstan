@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_entry, only: %i[show edit]
+  before_action :set_post, only: %i[show edit]
 
   def index
     @posts = Post.order('created_at DESC')
