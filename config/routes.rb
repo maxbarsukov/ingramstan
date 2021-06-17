@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   get '/dashboard' => 'users#index'
   get 'profile/:username' => 'users#profile', as: :profile
+  get 'post/like/:post_id' => 'likes#save_like', as: :like_post
 end
