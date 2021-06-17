@@ -8,7 +8,7 @@
             <%= link_to post.user.username, profile_path(post.user.username), class: "text-dark" %>
           </div>
 
-          <%= image_tag post.image.url, class: "img img-fluid" %>
+          <%= image_tag post.image.url, class: "img img-fluid wrap-img" %>
 
           <div class="post-details">
             <p><strong><%= post.total_likes %> likes</strong></p>
