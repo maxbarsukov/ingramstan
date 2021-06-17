@@ -11,6 +11,7 @@ class User < ApplicationRecord
             uniqueness: true
 
   has_many :posts, dependent: :destroy
+  has_many :likes
 
   def full_name
     "#{first_name} #{last_name}"
