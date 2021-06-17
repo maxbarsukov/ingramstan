@@ -6,7 +6,11 @@ class User < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  has_many :posts
+  validates :username,
+            presence: true,
+            uniqueness: true
+
+  has_many :posts, dependent: :destroy
 
   def full_name
     "#{first_name} #{last_name}"
