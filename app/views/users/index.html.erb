@@ -9,6 +9,9 @@
           </div>
 
           <%= image_tag post.image.url, class: "img img-fluid" %>
+          <div class="post-details">
+            <%= simple_format post.description %>
+          </div>
         </div>
       <% end %>
     </div>
