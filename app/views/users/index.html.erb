@@ -4,8 +4,8 @@
       <% @posts.each do |post| %>
         <div class="insta-post">
           <div class="post-meta">
-            <%= image_tag post.user.image.thumb.url, class: "img-circle" %>
-            <%= post.user.username %>
+            <%= link_to (image_tag post.user.image.thumb.url, class: "img-circle"), profile_path(post.user.username) %>
+            <%= link_to post.user.username, profile_path(post.user.username), class: "text-dark" %>
           </div>
 
           <%= image_tag post.image.url, class: "img img-fluid" %>
