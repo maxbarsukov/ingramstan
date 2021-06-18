@@ -1,0 +1,8 @@
+<% @follower_suggestions.each do |user| %>
+  <div class="recommended-follower">
+    <%= link_to (image_tag user.image.small_thumb.url, width: "40px", class: "img-circle"), profile_path(post.user.username) %>
+    <%= link_to post.user.username, profile_path(post.user.username), class: "text-dark" %>
+    <!-- TODO -->
+    <p><%= user.created_at < 1.days.ago ? "New to Instagram" : "Followed by X users" %></p>
+  </div>
+<% end %>
