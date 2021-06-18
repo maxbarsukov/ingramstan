@@ -4,11 +4,16 @@ class Like < ApplicationRecord
 
   validates_uniqueness_of :post_id, scope: :user_id
 
-  after_create :update_post_like_counter
+  after_create :increase_post_like_counter
+  after_destroy :decrease_post_like_counter
 
   private
 
-  def update_post_like_counter
-    Post.find(self.post_id).increment
+  def increase_post_like_counter
+    Post.find(self.post_id).increment(:total_likes_count).save
+  end
+
+  def decrease_post_like_counter
+    Post.find(self.post_id).decrement(:total_likes_count).save
   end
 end

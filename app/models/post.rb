@@ -11,10 +11,6 @@ class Post < ApplicationRecord
 
   scope :active, -> { where active: true }
 
-  def total_likes
-    0
-  end
-
   private
 
   def set_active
