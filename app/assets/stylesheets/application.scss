@@ -1,7 +1,11 @@
 /*
  *= require_tree .
- *= require bootstrap
+ *= require bootstrap.min
+ *= require fontawesome.min
  *= require_self
  */
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+
+@import "font-awesome-sprockets";
+@import "font-awesome";

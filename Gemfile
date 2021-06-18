@@ -34,6 +34,7 @@ gem 'devise', '~> 4.2'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
+gem 'font-awesome-sass', '~> 4.6.1'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

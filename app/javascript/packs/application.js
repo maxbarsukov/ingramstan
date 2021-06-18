@@ -6,7 +6,8 @@
 //= require jquery_ujs
 //= require jquery
 //= require turbolinks
-//= require bootstrap
+//= require bootstrap.min
+//= require fontawesome.min
 //= require_tree .
 
 import Rails from "@rails/ujs"
