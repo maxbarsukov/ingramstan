@@ -15,6 +15,7 @@ class LikesController < ApplicationController
                      @like.save
                    end
 
+        @post_likes = Post.find(@post_id).total_likes_count
         render 'posts/like'
       end
     end

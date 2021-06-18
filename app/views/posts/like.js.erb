@@ -3,3 +3,5 @@
 <% else %>
   $(".like-<%= @post_id %>").removeClass("active");
 <% end %>
+
+$("#post-<%= @post_id %>-likes").text("<%= @post_likes %> likes")
