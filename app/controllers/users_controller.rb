@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def index
     @posts = Post.active
+    @follower_suggestions = User.where.not(id: current_user.id).last(3)
   end
 
   def profile
