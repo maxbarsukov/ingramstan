@@ -25,6 +25,21 @@
   margin-bottom: 20px;
   i {
     margin-right: 10px;
-    color: #ddd;
+    cursor: pointer;
+    color: white;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #222;
+  }
+
+  i:hover {
+    color: #eee;
+    -webkit-text-fill-color: #eee;
+  }
+
+  i.active {
+    color: #ED4956;
+    -webkit-text-fill-color: #ED4956;
+    -webkit-text-stroke-color: #ED4956;
   }
 }
