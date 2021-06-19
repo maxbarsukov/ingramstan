@@ -1,6 +1,6 @@
 module UsersHelper
   def profile_picture(user, width = 100)
-    image_path = user.image.present? ? user.image.thumb.url : 'default_avatar.jpg'
+    image_path = user.image.present? ? user.image.url : 'default_avatar.jpg'
     image_tag image_path, width: width, class: "img-circle"
   end
 

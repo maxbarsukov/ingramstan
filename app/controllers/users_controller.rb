@@ -4,7 +4,9 @@ class UsersController < ApplicationController
 
   def index
     @posts = Post.active
-    @follower_suggestions = User.where.not(id: current_user.id).last(3)
+
+    following_ids = Follower.where(follower_id: current_user.id).map(&:following_id) << current_user.id
+    @follower_suggestions = User.where.not(id: following_ids).last(3)
   end
 
   def profile
@@ -13,7 +15,13 @@ class UsersController < ApplicationController
 
   def follow_user
     user_id = params[:follow_id]
-    Follower.create(follower_id: current_user.id, following_id: user_id)
+    if Follower.create(follower_id: current_user.id, following_id: user_id)
+      flash[:success] = 'Now following user'
+    else
+      flash[:danger] = 'Unable to follow user'
+    end
+
+    redirect_to dashboard_path
   end
 
   private

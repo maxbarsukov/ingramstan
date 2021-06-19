@@ -1,3 +1,7 @@
+<% if @follower_suggestions.empty? %>
+  No suggestions for you
+<% end %>
+
 <% @follower_suggestions.each do |user| %>
   <div class="recommended-follower">
     <div class="row">
