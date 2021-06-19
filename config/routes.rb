@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   root to: 'public#homepage'
   devise_for :users
 
-  resources :posts, only: [:new, :create, :show]
+  resources :posts, only: %i[new create show]
+  resources :posts, only: %i[create]
 
   get '/dashboard' => 'users#index'
   get 'profile/:username' => 'users#profile', as: :profile
