@@ -23,6 +23,8 @@
             <% end %>
 
             <p class="text-muted"><%= time_ago_in_words post.created_at %> ago</p>
+
+            <%= render 'posts/comments', post: post %>
           </div>
 
           <div class="comment-box">
