@@ -5,8 +5,10 @@
     </div>
 
     <div class="col-8 text-left">
-      <h1><%= @user.username %></h1>
-      <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-secondary" if can_edit_profile?(@user.id)%>
+      <h1>
+        <%= @user.username %>
+        <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-default ml-5" if can_edit_profile?(@user.id)%>
+      </h1>
 
       <div class="row profile-stats">
         <div class="col-4">
