@@ -24,6 +24,14 @@
 
             <p class="text-muted"><%= time_ago_in_words post.created_at %> ago</p>
           </div>
+
+          <div class="comment-box">
+            <%= form_for @comment do |f| %>
+              <%= f.hidden_field :post_id, value: post.id %>
+              <%= f.text_field :comment, placeholder: "Add comment here" %>
+              <%= f.submit "Post", class: "btn btn-success float-right" %>
+            <% end %>
+          </div>
         </div>
       <% end %>
     </div>

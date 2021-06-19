@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :posts, only: %i[new create show]
-  resources :posts, only: %i[create]
+  resources :comments, only: %i[create]
 
   get '/dashboard' => 'users#index'
   get 'profile/:username' => 'users#profile', as: :profile

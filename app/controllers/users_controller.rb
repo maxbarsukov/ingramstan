@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def index
     @posts = Post.active
+    @comment = Comment.new
 
     following_ids = Follower.where(follower_id: current_user.id).map(&:following_id) << current_user.id
     @follower_suggestions = User.where.not(id: following_ids).last(3)
