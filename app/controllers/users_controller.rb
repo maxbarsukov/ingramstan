@@ -11,6 +11,11 @@ class UsersController < ApplicationController
     @posts = @user.posts.active
   end
 
+  def follow_user
+    user_id = params[:follow_id]
+    Follower.create(follower_id: current_user.id, following_id: user_id)
+  end
+
   private
 
   def set_user
