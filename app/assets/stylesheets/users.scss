@@ -31,3 +31,13 @@ body {
   width: 100%;
   height: auto;
 }
+
+.btn-custom {
+  background: transparent;
+  border: 2px solid #ddd !important;
+  border-radius: 4px !important;
+}
+
+.btn-custom:hover {
+  background: #ddd !important;
+}
