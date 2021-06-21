@@ -20,13 +20,24 @@
 
             <p><strong id="post-<%= post.id %>-likes"><%= post.total_likes_count %> likes</strong></p>
             <% if post.description.present? %>
-              <p><strong><%= link_to post.user.username, profile_path(post.user.username), class: "text-dark" %></strong></p>
-              <%= simple_format post.description %>
+              <div class="message">
+                <p><strong><%= link_to post.user.username, profile_path(post.user.username), class: "text-dark" %></strong></p>
+                <%= simple_format post.description %>
+              </div>
             <% end %>
 
-            <p class="text-muted"><%= time_ago_in_words post.created_at %> ago</p>
+            <% if post.total_comments_count > 1 %>
+              <%= link_to "View all #{post.total_comments_count} comments", post_path(post.id), class: "text-muted" %>
+            <% end %>
 
-            <%= render 'posts/comments', post: post %>
+            <% post.comments.order(created_at: :asc).last(2).each do |comment| %>
+              <div class="message">
+                <strong><%= link_to comment.user.username, profile_path(comment.user.username), class: "text-dark" %></strong>
+                <%= comment.comment %>
+              </div>
+            <% end %>
+
+            <p class="m-0 small text-muted"><%= time_ago_in_words(post.created_at).upcase %> AGO</p>
           </div>
 
           <div class="comment-box">

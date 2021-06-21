@@ -20,7 +20,9 @@
                 <%= link_to (image_tag @post.user.image.small_thumb.url, width: "30px", class: "img-circle"), profile_path(@post.user.username) %>              </div>
               <div class="col-sm-9 col-lg-10">
                 <strong><%= link_to @post.user.username, profile_path(@post.user.username), class: "text-dark" %></strong>
-                <%= simple_format(breaking_word_wrap  @post.description, 23) %>
+                <div class="message">
+                  <%= simple_format @post.description %>
+                </div>
                 <p class="text-muted small"><%= time_ago_in_words @post.created_at %> ago</p>
               </div>
             </div>
