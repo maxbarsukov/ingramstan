@@ -24,7 +24,7 @@
 
         <p><strong id="post-<%= @post.id %>-likes"><%= @post.total_likes_count %> likes</strong></p>
 
-        <p class="text-muted"><%= time_ago_in_words @post.created_at %> ago</p>
+        <p class="small text-muted"><%= time_ago_in_words @post.created_at %> ago</p>
 
         <div class="comments-feed">
           <%= render 'posts/comments', post: @post %>
