@@ -27,6 +27,7 @@ gem 'carrierwave', '~> 0.11.2'
 
 # Image resizing
 gem 'mini_magick', '~> 4.5', '>= 4.5.1'
+gem 'file_validators', '~> 2.3'
 
 # User authentication
 gem 'devise', '~> 4.2'
