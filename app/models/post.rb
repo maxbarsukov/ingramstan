@@ -6,7 +6,9 @@ class Post < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   default_scope { order created_at: :desc }
+
   validates :image, presence: true
+  validates :image, file_size: { less_than: 10.megabytes }
 
   before_create :set_active
 
