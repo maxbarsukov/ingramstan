@@ -15,8 +15,15 @@
       <div class="post-details">
         <div class="comments-feed">
           <% if @post.description.present? %>
-            <strong><%= link_to @post.user.username, profile_path(@post.user.username), class: "text-dark" %></strong>
-            <%= simple_format @post.description %>
+            <div class="row">
+              <div class="col-sm-3 col-lg-2">
+                <%= link_to (image_tag @post.user.image.small_thumb.url, width: "30px", class: "img-circle"), profile_path(@post.user.username) %>              </div>
+              <div class="col-sm-9 col-lg-10">
+                <strong><%= link_to @post.user.username, profile_path(@post.user.username), class: "text-dark" %></strong>
+                <%= simple_format(breaking_word_wrap  @post.description, 23) %>
+                <p class="text-muted small"><%= time_ago_in_words @post.created_at %> ago</p>
+              </div>
+            </div>
           <% end %>
           <%= render 'posts/comments', post: @post %>
         </div>
