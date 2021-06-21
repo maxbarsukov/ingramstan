@@ -53,3 +53,10 @@
 .post-comment {
   box-shadow: none !important;
 }
+
+.comments-feed {
+  height: 100px;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+}
