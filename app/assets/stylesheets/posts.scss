@@ -22,7 +22,7 @@
 }
 
 .post-actions {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   i {
     margin-right: 10px;
     cursor: pointer;
@@ -59,4 +59,10 @@
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
   overflow-y: scroll;
+}
+
+.post-details .post-actions {
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
 }

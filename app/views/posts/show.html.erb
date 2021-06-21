@@ -13,22 +13,22 @@
       </div>
 
       <div class="post-details">
-        <% if @post.description.present? %>
-          <%= simple_format @post.description %>
-        <% end %>
+        <div class="comments-feed">
+          <% if @post.description.present? %>
+            <strong><%= link_to @post.user.username, profile_path(@post.user.username), class: "text-dark" %></strong>
+            <%= simple_format @post.description %>
+          <% end %>
+          <%= render 'posts/comments', post: @post %>
+        </div>
 
         <div class="post-actions">
           <i class="fa fa-heart fa-2x post-like like-<%= @post.id %> <%= "active" if post_liked_by_user?(@post.id) %>" data-id="<%= @post.id %>"></i>
           <i class="fa fa-comment fa-2x post-comment"></i>
         </div>
 
-        <p><strong id="post-<%= @post.id %>-likes"><%= @post.total_likes_count %> likes</strong></p>
+        <p class="m-0"><strong id="post-<%= @post.id %>-likes"><%= @post.total_likes_count %> likes</strong></p>
 
-        <p class="small text-muted"><%= time_ago_in_words @post.created_at %> ago</p>
-
-        <div class="comments-feed">
-          <%= render 'posts/comments', post: @post %>
-        </div>
+        <p class="m-0 small text-muted"><%= time_ago_in_words(@post.created_at).upcase %> AGO</p>
       </div>
 
       <div class="comment-box">

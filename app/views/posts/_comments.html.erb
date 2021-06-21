@@ -2,6 +2,6 @@
   <div class="comment">
     <strong><%= comment.user.username %></strong>
     <%= simple_format(breaking_word_wrap comment.comment, 30) %>
-    <p class="text-muted small"><%= time_ago_in_words comment.created_at %></p>
+    <p class="text-muted small"><%= time_ago_in_words comment.created_at %> ago</p>
   </div>
 <% end %>
