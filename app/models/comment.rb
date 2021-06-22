@@ -1,4 +1,6 @@
 class Comment < ApplicationRecord
+  attr_accessor :return_to
+
   belongs_to :post
   belongs_to :user
 
