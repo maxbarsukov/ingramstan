@@ -31,8 +31,8 @@
         </div>
 
         <div class="post-actions">
-          <i class="fa fa-heart fa-2x post-like like-<%= @post.id %> <%= "active" if post_liked_by_user?(@post.id) %>" data-id="<%= @post.id %>"></i>
-          <i class="fa fa-comment fa-2x post-comment" id="post-comment"></i>
+          <i class="fa fa-heart action-icon post-like like-<%= @post.id %> <%= "active" if post_liked_by_user?(@post.id) %>" data-id="<%= @post.id %>"></i>
+          <i class="fa fa-comment action-icon post-comment" id="post-comment"></i>
         </div>
 
         <p class="m-0"><strong id="post-<%= @post.id %>-likes"><%= @post.total_likes_count %>  <%= @post.total_likes_count == 1 ? 'like' : 'likes' %></strong></p>
