@@ -28,7 +28,11 @@
       <div class="message">
         <%= simple_format @user.description %>
       </div>
-      <p><%= link_to @user.website if @user.website.present? %></p>
+      <p>
+        <% if @user.website.present? %>
+          <a href="https://<%= @user.website %>"><%= @user.website %></a>
+        <% end %>
+      </p>
     </div>
   </div>
 
