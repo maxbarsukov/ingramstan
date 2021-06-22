@@ -11,7 +11,7 @@
           <%= image_tag post.image.url, class: "img img-fluid wrap-img" %>
 
           <div class="post-details">
-            <div class="post-actions">
+            <div class="post-actions post-index">
               <i class="fa fa-heart fa-2x post-like like-<%= post.id %> <%= "active" if post_liked_by_user?(post.id) %>" data-id="<%= post.id %>"></i>
               <%= link_to post_path(post.id) do %>
                 <i class="fa fa-comment fa-2x post-comment"></i>
