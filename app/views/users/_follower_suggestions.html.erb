@@ -15,8 +15,7 @@
         <% end %>
 
         <%= link_to user.username, profile_path(user.username), class: "text-dark font-weight-bold" %>
-        <!-- TODO -->
-        <p class="text-muted small"><%= user.created_at > 2.days.ago ? "New to Instagram" : "Followed by X users" %></p>
+        <p class="text-muted small"><%= user.created_at > 2.days.ago ? "New to Instagram" : "Followed by #{user.total_followers } users" %></p>
       </div>
     </div>
   </div>

@@ -3,11 +3,13 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:profile]
 
   def index
-    @posts = Post.active
+    followers_ids = Follower.where(follower_id: current_user.id).map(&:following_id)
+    followers_ids << current_user.id
+
+    @posts = Post.includes(:user).where(user_id: followers_ids).active
     @comment = Comment.new
 
-    following_ids = Follower.where(follower_id: current_user.id).map(&:following_id) << current_user.id
-    @follower_suggestions = User.where.not(id: following_ids).last(5)
+    @follower_suggestions = User.where.not(id: followers_ids).limit(100).sample(5)
   end
 
   def profile
