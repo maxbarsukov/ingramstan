@@ -7,7 +7,7 @@
       <div class="col-sm-8 col-lg-9">
         <div class="message">
           <strong><%= link_to comment.user.username, profile_path(comment.user.username), class: "text-dark" %></strong>
-          <%= simple_format comment.comment %>
+          <%= simple_format comment.comment, class: "m-0" %>
           <p class="text-muted small"><%= time_ago_in_words comment.created_at %> ago</p>
         </div>
       </div>

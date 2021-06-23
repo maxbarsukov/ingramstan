@@ -21,7 +21,7 @@
               <div class="col-sm-8 col-lg-9">
                 <strong><%= link_to @post.user.username, profile_path(@post.user.username), class: "text-dark" %></strong>
                 <div class="message">
-                  <%= simple_format @post.description %>
+                  <%= simple_format @post.description, class: "m-0" %>
                 </div>
                 <p class="text-muted small"><%= time_ago_in_words @post.created_at %> ago</p>
               </div>
