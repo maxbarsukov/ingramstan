@@ -35,7 +35,7 @@
           <i class="fa fa-comment action-icon post-comment" id="post-comment"></i>
         </div>
 
-        <p class="m-0"><strong id="post-<%= @post.id %>-likes"><%= @post.total_likes_count %>  <%= @post.total_likes_count == 1 ? 'like' : 'likes' %></strong></p>
+        <p class="m-0"><strong id="post-<%= @post.id %>-likes"><%= pluralize @post.total_likes_count, 'like' %></strong></p>
 
         <p class="m-0 small text-muted"><%= time_ago_in_words(@post.created_at).upcase %> AGO</p>
       </div>
