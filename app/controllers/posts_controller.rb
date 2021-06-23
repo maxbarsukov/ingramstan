@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def show
     @comment = Comment.new
+    @comments = Comment.includes(:user).where(post_id: @post.id)
   end
 
   def new
@@ -24,7 +25,7 @@ class PostsController < ApplicationController
   private
 
   def set_post
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:id]) if params[:id].present?
   end
 
   def post_params
