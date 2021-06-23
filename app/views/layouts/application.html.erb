@@ -18,14 +18,13 @@
   <body>
   <%= render 'layouts/header' %>
 
-  <%= render 'layouts/notification', notification_type: alert %>
-
-  <%= render 'layouts/notification', notification_type: notice %>
-
   <!-- Page content-->
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
+        <%= render 'layouts/notification', notification_type: alert %>
+        <%= render 'layouts/notification', notification_type: notice %>
+
         <%= yield %>
       </div>
     </div>
