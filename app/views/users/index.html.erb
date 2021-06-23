@@ -1,6 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-8">
+      <% if @posts.empty? %>
+        <div class="p-5 h4">
+          No posts to display
+        </div>
+      <% end %>
+
       <% @posts.each do |post| %>
         <div class="insta-post">
           <div class="post-meta">
