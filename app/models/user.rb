@@ -19,10 +19,10 @@ class User < ApplicationRecord
   end
 
   def total_followers
-    Follower.where(follower_id: id).count
+    Follower.where(following_id: id).count
   end
 
   def total_following
-    Follower.where(following_id: id).count
+    Follower.where(follower_id: id).count
   end
 end
