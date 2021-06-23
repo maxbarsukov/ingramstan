@@ -14,13 +14,13 @@
 
       <div class="row profile-stats">
         <div class="col-4">
-          <%= @user.posts.count %> posts
+          <strong><%= @user.posts.count %></strong> <%= 'post'.pluralize(@user.posts.count) %>
         </div>
         <div class="col-4">
-          <%= @user.total_followers %> followers
+          <strong><%= @user.total_followers %></strong> <%= 'follower'.pluralize(@user.total_followers) %>
         </div>
         <div class="col-4">
-          <%= @user.total_following %> following
+          <strong><%= @user.total_following %></strong> following
         </div>
       </div>
 
