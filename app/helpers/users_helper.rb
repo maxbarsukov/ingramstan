@@ -7,4 +7,9 @@ module UsersHelper
   def can_edit_profile?(profile_id)
     user_signed_in? && current_user.id == profile_id
   end
+
+  def trim_url(url)
+    return url.sub(%r{^(https|http)?:(//|\\\\)(www\.)?}i, '') if url.start_with?('http')
+    url
+  end
 end

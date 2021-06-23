@@ -30,7 +30,7 @@
       </div>
       <p>
         <% if @user.website.present? %>
-          <a href="https://<%= @user.website %>"><%= @user.website %></a>
+          <a href="https://<%= trim_url @user.website %>"><%= trim_url @user.website %></a>
         <% end %>
       </p>
     </div>
