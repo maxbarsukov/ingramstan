@@ -40,13 +40,14 @@
     <% @posts.each do |post| %>
       <div class="col-4">
         <div class="insta-post post-square" style="background: url(<%= post.image.url %>) no-repeat center top">
-          <div class="post-stats">
-            <div class="inner">
-              <i class="fa fa-heart"> <%= post.total_likes_count %></i>
-              <i class="fa fa-comment m-l-15"> <%= post.total_comments_count %></i>
+          <%= link_to post_path(post) do %>
+            <div class="post-stats">
+              <div class="inner">
+                <i class="fa fa-heart"> <%= post.total_likes_count %></i>
+                <i class="fa fa-comment m-l-15"> <%= post.total_comments_count %></i>
+              </div>
             </div>
-          </div>
-        <%#= link_to (image_tag post.image.url, class: "img img-fluid"), post_path(post) %>
+        <% end %>
         </div>
       </div>
     <% end %>
