@@ -16,11 +16,7 @@ class UsersController < ApplicationController
 
   def follow_user
     user_id = params[:follow_id]
-    if Follower.create(follower_id: current_user.id, following_id: user_id)
-      flash[:success] = 'Now following user'
-    else
-      flash[:danger] = 'Unable to follow user'
-    end
+    flash[:alert] = 'Unable to follow user' unless Follower.create(follower_id: current_user.id, following_id: user_id)
 
     redirect_to dashboard_path
   end

@@ -15,9 +15,9 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id if user_signed_in?
 
     if @post.save
-      redirect_to dashboard_path, flash: { success: "Post was created successfully!" }
+      redirect_to dashboard_path # , flash: { notice: "Post was created successfully!" }
     else
-      redirect_to new_post_path, flash: { danger: "Post was not saved!" }
+      redirect_to new_post_path, flash: { alert: "Post was not saved!" }
     end
   end
 
