@@ -32,6 +32,7 @@ gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 # User authentication
 gem 'devise', '~> 4.2'
 gem 'omniauth-facebook', '~> 4.0'
+gem "omniauth-rails_csrf_protection", '~> 1.0'
 
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.4.1'
