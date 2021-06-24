@@ -4,3 +4,4 @@
 
 <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success" %>
 <%= link_to "Sign In", new_user_session_path, class: "btn btn-secondary" %>
+<%= link_to "Sign In With Facebook", user_facebook_omniauth_authorize_path, method: :post, class: "btn btn-info" %>
