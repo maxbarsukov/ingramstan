@@ -19,6 +19,7 @@ import 'bootstrap'
 import '../stylesheets/application'
 
 require("../includes/posts.js")
+require("../includes/pagination.js")
 
 import $ from 'jquery';
 global.$ = jQuery;

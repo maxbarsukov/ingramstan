@@ -3,13 +3,23 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:profile]
 
   def index
-    followers_ids = Follower.where(follower_id: current_user.id).map(&:following_id)
-    followers_ids << current_user.id
+    followings_ids = Follower.where(follower_id: current_user.id).map(&:following_id)
+    followings_ids << current_user.id
 
-    @posts = Post.includes(:user).where(user_id: followers_ids).active
+    @posts = Post.paginate(page: params[:page], per_page: 5)
+                 .order(created_at: :desc)
+                 .includes(:user)
+                 .where(user_id: followings_ids)
+                 .active
+
     @comment = Comment.new
 
-    @follower_suggestions = User.where.not(id: followers_ids).limit(100).sample(5)
+    @follower_suggestions = User.where.not(id: followings_ids).limit(100).sample(5)
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def profile
