@@ -1,0 +1,50 @@
+<div class="insta-post">
+  <div class="post-meta">
+    <%= link_to (image_tag post.user.image.small_thumb.url, width: "40px", class: "img-circle"), profile_path(post.user.username) %>
+    <%= link_to post.user.username, profile_path(post.user.username), class: "text-dark" %>
+  </div>
+
+  <%= image_tag post.image.url, class: "img img-fluid wrap-img" %>
+
+  <div class="post-details">
+    <div class="post-actions post-index">
+      <i class="fa fa-heart action-icon post-like like-<%= post.id %> <%= "active" if post_liked_by_user?(post.id) %>" data-id="<%= post.id %>"></i>
+      <%= link_to post_path(post.id) do %>
+        <i class="fa fa-comment action-icon post-comment"></i>
+      <% end %>
+    </div>
+
+    <p><strong id="post-<%= post.id %>-likes"><%= pluralize post.total_likes_count, 'like' %></strong></p>
+    <% if post.description.present? %>
+      <div class="message">
+        <p><strong><%= link_to post.user.username, profile_path(post.user.username), class: "text-dark" %></strong></p>
+        <%= simple_format post.description %>
+      </div>
+    <% end %>
+
+    <% if post.total_comments_count > 1 %>
+      <%= link_to "View all #{post.total_comments_count} comments", post_path(post.id), class: "text-muted" %>
+    <% end %>
+
+    <% post.comments.order(created_at: :asc).last(2).each do |comment| %>
+      <div class="message">
+        <strong><%= link_to comment.user.username, profile_path(comment.user.username), class: "text-dark" %></strong>
+        <%= comment.comment %>
+      </div>
+    <% end %>
+
+    <p class="pt-3 small text-muted"><%= time_ago_in_words(post.created_at).upcase %> AGO</p>
+  </div>
+
+  <div class="comment-box">
+    <%= form_for @comment do |f| %>
+      <%= f.hidden_field :post_id, value: post.id %>
+      <div class="input-group">
+        <%= f.text_field :comment, placeholder: "Add comment here...", class: "form-control post-comment" %>
+        <div class="input-group-btn">
+          <%= f.submit "Post", class: "btn btn-default float-right" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
