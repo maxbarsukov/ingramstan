@@ -25,6 +25,10 @@ gem 'jbuilder', '~> 2.7'
 # Upload files
 gem 'carrierwave', '~> 0.11.2'
 
+# Pagination
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+gem 'bootstrap-will_paginate', '~> 1.0'
+
 # Image resizing
 gem 'file_validators', '~> 2.3'
 gem 'mini_magick', '~> 4.5', '>= 4.5.1'
