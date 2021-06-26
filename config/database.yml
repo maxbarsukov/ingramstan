@@ -83,4 +83,5 @@ production:
   <<: *default
   database: ingramstan_production
   username: ingramstan
+  host: localhost
   password: <%= ENV['INGRAMSTAN_DATABASE_PASSWORD'] %>
