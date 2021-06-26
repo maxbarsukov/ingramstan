@@ -9,7 +9,15 @@ class User < ApplicationRecord
 
   validates :username,
             presence: true,
-            uniqueness: true
+            uniqueness: true,
+            format: { with: /\A[a-zA-Z0-9_]*\z/i },
+            length: { maximum: 30 }
+
+  validates :first_name,
+            length: { maximum: 30 }
+
+  validates :last_name,
+            length: { maximum: 30 }
 
   has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
