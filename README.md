@@ -11,13 +11,18 @@ Allow users to create an account, upload photos, like and comment on photos, fol
 - Like and comment on posts
 - Follow users and get followed by them
 - User profile / edit account details
+- Pagination
+- Infinite scroll
 
 ## About the code
 
 - Built with Ruby on Rails 6
-- Using Boostrap for styles
+- Using Boostrap 4 for styles
 - Carrierwave is used to store user images
 - Devise as authentication solution
+- will_paginate for pagination
+- OmniAuth provides authentication using third-party credentials
+- jQuery for interactive likes, comments and infinite scrolling
 
 ## Setup
 
