@@ -8,9 +8,11 @@
 
       <div class="form-group">
         <%= f.label :image %>
-        <%= f.file_field :image, class: "form-control" %>
+        <%= f.file_field :image, class: "form-control", onchange: "javascript: updatePreview(this); " %>
         <%= f.hidden_field :image_cache %>
       </div>
+
+      <img id="img_prev"/>
 
       <div class="form-group">
         <%= f.label :username %><br />
