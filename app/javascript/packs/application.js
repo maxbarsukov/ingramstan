@@ -18,8 +18,9 @@ import "channels"
 import 'bootstrap'
 import '../stylesheets/application'
 
-require("../includes/posts.js")
-require("../includes/pagination.js")
+import "../includes/posts.js"
+import "../includes/pagination.js"
+import '../includes/image_preview'
 
 import $ from 'jquery';
 global.$ = jQuery;
