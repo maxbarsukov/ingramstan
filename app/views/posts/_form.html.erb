@@ -1,7 +1,7 @@
 <%= form_for @post, html: { multipart: true } do |f| %>
   <div class="form-group">
     <%= f.label :image %>
-    <%= f.file_field :image, class: "form-control", onchange: "updatePreview(this);" %>
+    <%= f.file_field :image, class: "form-control", onchange: "javascript: updatePreview(this); " %>
     <%= f.hidden_field :image_cache %>
   </div>
 
@@ -14,20 +14,3 @@
 
   <%= f.submit "Save Post" , class: "btn btn-success" %>
 <% end %>
-
-<script>
-    function updatePreview(input) {
-        if (input.files && input.files[0]) {
-            const reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#img_prev')
-                    .attr('src', e.target.result)
-                    .width(300)
-            };
-
-            reader.readAsDataURL(input.files[0]);
-            $('#img_prev').addClass('p-2 border bg-white')
-        }
-    }
-</script>

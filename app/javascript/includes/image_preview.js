@@ -1,4 +1,4 @@
-export function updatePreview(input) {
+window.updatePreview = function (input) {
     if (input.files && input.files[0]) {
         const reader = new FileReader();
 
