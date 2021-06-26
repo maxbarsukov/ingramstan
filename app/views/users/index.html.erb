@@ -17,26 +17,28 @@
     </div>
 
     <div class="col-4">
-      <div class="user-summary">
+      <div class="sticky-offset">
+        <div class="user-summary">
 
-        <div class="row">
-          <div class="col-3">
-            <%= link_to (image_tag current_user.image.thumb.url, width: "70px", class: "img-circle"), profile_path(current_user.username) %>
-          </div>
-          <div class="col-9 pt-4">
-            <strong><%= current_user.username %></strong>
-            <p class="text-muted"><%= current_user.full_name %></p>
+          <div class="row">
+            <div class="col-3">
+              <%= link_to (image_tag current_user.image.thumb.url, width: "70px", class: "img-circle"), profile_path(current_user.username) %>
+            </div>
+            <div class="col-9 pt-4">
+              <strong><%= current_user.username %></strong>
+              <p class="text-muted"><%= current_user.full_name %></p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="follower-suggestions">
-        <%= link_to "See All", "#", class: "pull-right small text-dark" %>
-        <p class="text-muted">Suggestions For You</p>
-        <%= render "users/follower_suggestions" %>
-      </div>
+        <div class="follower-suggestions">
+          <%= link_to "See All", "#", class: "pull-right small text-dark" %>
+          <p class="text-muted">Suggestions For You</p>
+          <%= render "users/follower_suggestions" %>
+        </div>
 
-      <%= render partial: 'layouts/footer' %>
+        <%= render partial: 'layouts/footer' %>
+      </div>
     </div>
   </div>
 </div>
