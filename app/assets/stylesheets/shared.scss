@@ -1,3 +1,9 @@
-.footer {
+.footer-color {
   color: #c7c7c7;
+
+  a {
+    &:hover {
+      color: #777;
+    }
+  }
 }

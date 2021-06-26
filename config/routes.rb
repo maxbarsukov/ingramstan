@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :comments, only: %i[create]
 
   get '/dashboard' => 'users#index'
+  get '/about' => 'public#about'
+  get '/help' => 'public#about'
   get 'profile/:username' => 'users#profile', as: :profile
   get 'post/like/:post_id' => 'likes#save_like', as: :like_post
 
