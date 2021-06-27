@@ -65,6 +65,8 @@ group :development do
   gem 'spring'
   # Use ENV vars in Rails
   gem 'figaro', '~> 1.1', '>= 1.1.1'
+  # Help to kill N+1 queries and unused eager loading
+  gem 'bullet', '~> 5.7', '>= 5.7.5'
 end
 
 group :test do
