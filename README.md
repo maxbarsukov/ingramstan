@@ -23,6 +23,7 @@ Allow users to create an account, upload photos, like and comment on photos, fol
 - will_paginate for pagination
 - OmniAuth provides authentication using third-party credentials
 - jQuery for interactive likes, comments and infinite scrolling
+- Bullet as N+1 problem profiler
 
 ## Setup
 
