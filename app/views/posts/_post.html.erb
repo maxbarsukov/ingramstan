@@ -26,7 +26,7 @@
       <%= link_to "View all #{post.total_comments_count} comments", post_path(post.id), class: "text-muted" %>
     <% end %>
 
-    <% post.comments.order(created_at: :asc).last(2).each do |comment| %>
+    <% post.last_comments(2).each do |comment| %>
       <div class="message">
         <strong><%= link_to comment.user.username, profile_path(comment.user.username), class: "text-dark" %></strong>
         <%= comment.comment %>

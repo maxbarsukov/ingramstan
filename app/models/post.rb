@@ -14,6 +14,10 @@ class Post < ApplicationRecord
 
   scope :active, -> { where active: true }
 
+  def last_comments(n)
+    comments.includes([:user]).order(created_at: :asc).last(n)
+  end
+
   private
 
   def set_active
