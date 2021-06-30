@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class ImageUploader < CarrierWave::Uploader::Base
+class AvatarUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   storage :file
@@ -19,8 +19,24 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
+  version :thumb do
+    process resize_to_fill: [70, 70]
+  end
+
+  version :small_thumb, from_version: :thumb do
+    process resize_to_fill: [40, 40]
+  end
+
+  version :profile_thumb do
+    process resize_to_fill: [300, 300]
+  end
+
   def extension_white_list
     %w[jpg jpeg gif png]
+  end
+
+  def default_url
+    'default_avatar.jpg'
   end
 
   # Override the filename of the uploaded files:

@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[facebook]
 
-  mount_uploader :image, ImageUploader
+  mount_uploader :image, AvatarUploader
 
   validates :username,
             presence: true,
