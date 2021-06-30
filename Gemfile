@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Upload files
-gem 'carrierwave', '~> 0.11.2'
+gem 'carrierwave', '~> 2.2', '>= 2.2.2'
 
 # Pagination
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
