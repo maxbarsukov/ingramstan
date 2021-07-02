@@ -15,12 +15,13 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import 'bootstrap'
-import '../stylesheets/application'
+import "bootstrap"
+import "../stylesheets/application"
 
 import "../includes/posts.js"
 import "../includes/pagination.js"
-import '../includes/image_preview'
+import "../includes/image_preview.js"
+import "../includes/check_online.js"
 
 import $ from 'jquery';
 global.$ = jQuery;

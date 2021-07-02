@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: [:profile]
+  after_action :update_presence, only: [:profile]
 
   def index
     followings_ids = Follower.where(follower_id: current_user.id).map(&:following_id)
@@ -24,6 +25,10 @@ class UsersController < ApplicationController
 
   def profile
     @posts = @user.posts.active
+  end
+
+  def update_presence
+    current_user.update_attribute(:last_seen, DateTime.now) if current_user
   end
 
   def follow_user

@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get '/dashboard' => 'users#index'
   get '/about' => 'public#about'
   get '/help' => 'public#about'
+
+  get '/presence' => 'users#update_presence'
+
   get 'profile/:username' => 'users#profile', as: :profile
   get 'post/like/:post_id' => 'likes#save_like', as: :like_post
 
