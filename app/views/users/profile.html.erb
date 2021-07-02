@@ -2,6 +2,16 @@
   <div class="row">
     <div class="col-4">
       <%= image_tag @user.image.profile_thumb.url, width: "250px", class: "img-circle" %>
+      <div class="mt-4 pr-5 text-center">
+        <div class="text-muted">
+          <% if @user.online? %>
+              <span class="online-circle">&#8226;</span>
+              online
+          <% else %>
+            last seen<br/><%= time_ago_in_words @user.last_seen %> ago
+          <% end %>
+        </div>
+      </div>
     </div>
 
     <div class="col-8 text-left">
