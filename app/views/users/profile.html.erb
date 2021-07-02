@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-4">
-      <%= image_tag @user.image.profile_thumb.url, width: "250px", class: "img-circle" %>
-      <div class="mt-4 pr-5 text-center">
+      <%= image_tag @user.image.profile_thumb.url, width: "250px", class: "img-circle center-block" %>
+      <div class="mt-4 text-center">
         <div class="text-muted">
           <% if @user.online? %>
               <span class="online-circle">&#8226;</span>
