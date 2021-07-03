@@ -34,10 +34,10 @@ two:
   id: 2
   email: two@gmail.com
   username: 2
-  encrypted_password: <%= User.new.send(:password_digest, '222222') %>
+  encrypted_password: <%= User.new.send(:password_digest, '111111') %>
 
 three:
   id: 3
   email: three@gmail.com
   username: 3
-  encrypted_password: <%= User.new.send(:password_digest, '333333') %>
+  encrypted_password: <%= User.new.send(:password_digest, '111111') %>
