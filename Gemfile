@@ -26,8 +26,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'carrierwave', '~> 2.2', '>= 2.2.2'
 
 # Pagination
-gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'bootstrap-will_paginate', '~> 1.0'
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 
 # Image resizing
 gem 'file_validators', '~> 2.3'
@@ -75,6 +75,10 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
+
+  gem 'database_cleaner', '~> 2.0', '>= 2.0.1'
+  gem 'factory_bot_rails', '~> 6.2'
+  gem 'faker', '~> 2.18'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
