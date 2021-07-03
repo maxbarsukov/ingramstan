@@ -22,7 +22,12 @@
 require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test 'has username' do
+    assert_equal '1', users(:one).username
+  end
+
+  test 'can update username' do
+    users(:one).update(first_name: '11')
+    assert_equal '11', users(:one).first_name
+  end
 end

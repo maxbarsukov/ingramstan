@@ -18,4 +18,9 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     get profile_url users(:one)
     assert_response :success
   end
+
+  test 'should edit profile' do
+    get edit_user_registration_path
+    assert_response :success
+  end
 end
