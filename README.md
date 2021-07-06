@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/maxbarsukov/ingramstan.svg?branch=master)](https://travis-ci.com/maxbarsukov/ingramstan)
+
 # Ingramstan
 
 Allow users to create an account, upload photos, like and comment on photos, follower users and be followed and more.
