@@ -43,6 +43,9 @@ gem 'bootstrap-sass', '~> 3.4.1'
 gem 'font-awesome-sass', '~> 4.6.1'
 gem 'sassc-rails', '>= 2.1.0'
 
+# Test coverage
+gem 'coveralls', require: false
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
