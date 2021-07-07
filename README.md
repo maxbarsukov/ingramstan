@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.com/maxbarsukov/ingramstan.svg?branch=master)](https://travis-ci.com/maxbarsukov/ingramstan)
+[![Coverage Status](https://coveralls.io/repos/github/maxbarsukov/ingramstan/badge.svg?branch=master)](https://coveralls.io/github/maxbarsukov/ingramstan?branch=master)
 
 # Ingramstan
 
