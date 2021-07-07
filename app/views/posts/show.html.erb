@@ -14,7 +14,7 @@
 
       <div class="post-details">
         <div class="comments-feed">
-          <% if @post.description.present? %>
+          <% if @post.description? %>
             <div class="row">
               <div class="col-sm-3 col-lg-2">
                 <%= link_to (image_tag @post.user.image.small_thumb.url, width: "30px", class: "img-circle"), profile_path(@post.user.username) %>              </div>

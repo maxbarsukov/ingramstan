@@ -15,7 +15,7 @@
     </div>
 
     <p><strong id="post-<%= post.id %>-likes"><%= pluralize post.total_likes_count, 'like' %></strong></p>
-    <% if post.description.present? %>
+    <% if post.description? %>
       <div class="message">
         <p><strong><%= link_to post.user.username, profile_path(post.user.username), class: "text-dark" %></strong></p>
         <%= simple_format post.description %>

@@ -39,7 +39,7 @@
         <%= simple_format @user.description %>
       </div>
       <p>
-        <% if @user.website.present? %>
+        <% if @user.website? %>
           <a href="https://<%= trim_url @user.website %>"><%= trim_url @user.website %></a>
         <% end %>
       </p>
