@@ -18,6 +18,7 @@
 #  website                :string
 #  provider               :string
 #  uid                    :string
+#  last_seen              :datetime
 #
 require "test_helper"
 

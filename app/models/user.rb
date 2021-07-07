@@ -18,6 +18,7 @@
 #  website                :string
 #  provider               :string
 #  uid                    :string
+#  last_seen              :datetime
 #
 class User < ApplicationRecord
   # Include default devise modules. Others available are:

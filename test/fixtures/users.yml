@@ -18,6 +18,7 @@
 #  website                :string
 #  provider               :string
 #  uid                    :string
+#  last_seen              :datetime
 #
 
 # This model initially had no columns defined. If you add columns to the
