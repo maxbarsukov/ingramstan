@@ -1,4 +1,4 @@
-$('#posts').append('<%= j render @posts %>');
+$('#posts').append('<%= j render @posts, comment: @comment %>');
 <% if @posts.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate @posts %>');
 <% else %>

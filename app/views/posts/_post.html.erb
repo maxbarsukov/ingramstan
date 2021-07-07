@@ -37,7 +37,7 @@
   </div>
 
   <div class="comment-box">
-    <%= form_for @comment do |f| %>
+    <%= form_for comment do |f| %>
       <%= f.hidden_field :post_id, value: post.id %>
       <div class="input-group">
         <%= f.text_field :comment, placeholder: "Add comment here...", class: "form-control post-comment" %>
