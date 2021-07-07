@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 
   def follow_user
     user_id = params[:follow_id]
-    flash[:alert] = 'Unable to follow user' unless Follower.create(follower_id: current_user.id, following_id: user_id)
+    flash[:alert] = 'Unable to follow user' unless Follower.create!(follower_id: current_user.id, following_id: user_id)
 
     redirect_to dashboard_path
   end

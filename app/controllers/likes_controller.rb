@@ -9,10 +9,10 @@ class LikesController < ApplicationController
     respond_to do |format|
       format.js do
         @success = if existing_like.any?
-                     existing_like.first.destroy
+                     existing_like.first.destroy!
                      false
                    else
-                     @like.save
+                     @like.save!
                    end
 
         @post_likes = Post.find(@post_id).total_likes_count
