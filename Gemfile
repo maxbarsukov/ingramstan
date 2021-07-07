@@ -72,6 +72,10 @@ group :development do
   gem 'figaro', '~> 1.1', '>= 1.1.1'
   # Help to kill N+1 queries and unused eager loading.
   gem 'bullet', '~> 6.1', '>= 6.1.4'
+  # Code metric tool for rails codes
+  gem 'rails_best_practices', '~> 1.21'
+  # Helps to keep the database in a good shape
+  gem 'active_record_doctor', '~> 1.8'
 end
 
 group :test do
